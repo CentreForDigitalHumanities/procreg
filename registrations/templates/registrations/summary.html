@@ -1,0 +1,44 @@
+{% extends "registrations/base-form.html" %}
+
+{% load static %}
+{% load i18n %}
+{% load question_tags %}
+{% load registration_tags %}
+{% load progress_tags %}
+
+
+{% block stepper %}
+
+
+awoo
+{% progress_bar view.blueprint "summary" %}
+  
+{% endblock %}
+
+
+{% block form %}
+<div class="col-12">
+    <h3>{% trans "registrations:summary:page_title" %}</h3>
+
+    <p>
+	{% trans "registrations:summary:page_description" %}
+    </p>
+
+    <div class="summary-questions">
+
+    </div>
+
+    <div class="space-top">
+
+
+
+	{% for question in completed %}
+	{% display_question question %}
+	{% endfor %}
+
+
+    </div>
+
+
+</div>
+{% endblock %}
